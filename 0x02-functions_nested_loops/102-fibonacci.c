@@ -13,9 +13,9 @@ int main(void)
 	fib[0] = 1;
 	fib[1] = 2;
 
-	printf("%d, %d", fib[0], fib[1]);
-
 	int i;
+
+	printf("%d, %d", fib[0], fib[1]);
 
 	for (i = 2; i < 50; i++)
 	{
