@@ -13,7 +13,7 @@ int main(void)
 	fib[0] = 1;
 	fib[1] = 2;
 
-	int i;
+	long int i;
 
 	printf("%d, %d", fib[0], fib[1]);
 
