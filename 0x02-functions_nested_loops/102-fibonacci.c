@@ -9,17 +9,20 @@
 int main(void)
 {
 	long int i;
-	int fib[50];
+	long int fib[50];
 
 	fib[0] = 1;
 	fib[1] = 2;
 
-	printf("%d, %d", fib[0], fib[1]);
+	printf("%ld, %ld", fib[0], fib[1]);
 
 	for (i = 2; i < 50; i++)
 	{
 		fib[i] = fib[i - 1] + fib[i - 2];
-		printf(", %d", fib[i]);
+		if (fib[i] < 0 || fib[i] > 20365011074)
+			break;
+
+		printf(", %ld", fib[i]);
 	}
 	printf("\n");
 
