@@ -8,12 +8,11 @@
  */
 int main(void)
 {
+	long int i;
 	int fib[50];
 
 	fib[0] = 1;
 	fib[1] = 2;
-
-	long int i;
 
 	printf("%d, %d", fib[0], fib[1]);
 
