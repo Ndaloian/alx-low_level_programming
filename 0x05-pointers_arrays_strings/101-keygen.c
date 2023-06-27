@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define PASSWORD_LENGTH 10
+
 /**
  * main - print password
  *
@@ -9,11 +11,12 @@
  */
 int main(void)
 {
+	int i;
 	char password[PASSWORD_LENGTH + 1];
 
 	srand(time(NULL));
 
-	for (int i = 0; i < PASSWORD_LENGTH; i++)
+	for (i = 0; i < PASSWORD_LENGTH; i++)
 	{
 		int random_char = rand() % 26 + 'a';
 
@@ -22,7 +25,7 @@ int main(void)
 
 	password[PASSWORD_LENGTH] = '\0';
 
-	printf("Generated passwordd: %s\n", password);
+	printf("Generated password: %s\n", password);
 
 	return (0);
 }
