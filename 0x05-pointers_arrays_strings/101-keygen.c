@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-#define PASSWORD_LENGTH 10
+#include <math.h>
 
 /**
  * main - print password
@@ -11,21 +10,30 @@
  */
 int main(void)
 {
-	int i;
-	char password[PASSWORD_LENGTH + 1];
+	int ascii = 2772, i = 0, j, random;
+	char password[100];
+	time_t t;
 
-	srand(time(NULL));
-
-	for (i = 0; i < PASSWORD_LENGTH; i++)
+	srand((int) time(&t));
+	while (ascii > 126)
 	{
-		int random_char = rand() % 26 + 'a';
-
-		password[i] = (char)random_char;
+		random = rand() % 126;
+		password[i] = random;
+		ascii -= random;
+		i++;
+	}
+	if (ascii > 0)
+		password[i] = ascii;
+	else
+	{
+		i--;
 	}
 
-	password[PASSWORD_LENGTH] = '\0';
 
-	printf("%s\n", password);
-
+	for (j = 0; j <= i; j++)
+	{
+		printf("%c", password[j]);
+	}
 	return (0);
 }
+
