@@ -7,7 +7,7 @@
  */
 int _atoi(char *s)
 {
-	int s = 1;
+	int son = 1;
 	int r = 0;
 	int i = 0;
 
@@ -17,7 +17,7 @@ int _atoi(char *s)
 	if (s[i] == '-' || s[i] == '+')
 	{
 		if (s[i] == '-')
-			s = -1;
+			son = -1;
 		i++;
 	}
 
@@ -25,7 +25,7 @@ int _atoi(char *s)
 	{
 		if (r > INT_MAX / 10 || (r == INT_MAX / 10 && (s[i] - '0') > INT_MAX % 10))
 		{
-			if (s == 1)
+			if (son == 1)
 				return (INT_MAX);
 			else
 				return (INT_MIN);
@@ -34,5 +34,5 @@ int _atoi(char *s)
 		r = r * 10 + (s[i] - '0');
 		i++;
 	}
-	return (r * s);
+	return (r * son);
 }
