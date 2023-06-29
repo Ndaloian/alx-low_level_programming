@@ -5,20 +5,20 @@
  * @c: character string
  * Return: string c
  */
-char *cap_string(char *c)
+char *cap_string(char *str)
 {
 	int i = 0;
 	int capitalize_next = 1;
 
-	while (c[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if (isspace(c[i]) || ispunct(c[i]))
+		if (isspace(str[i]) || ispunct(str[i]))
 		{
 			capitalize_next = 1;
 		}
 		else if (capitalize_next)
 		{
-			c[i] = toupper(c[i]);
+			c[i] = toupper(str[i]);
 			capitalize_next = 0;
 		}
 		i++;
