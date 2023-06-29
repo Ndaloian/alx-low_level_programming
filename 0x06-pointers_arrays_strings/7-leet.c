@@ -10,29 +10,24 @@ char *leet(char *str)
 	char *ptr = str;
 	char replacements[] = "aAeEoOtTlL";
 	char leet_chars[] = "433071";
+	int index, found;
 
 	while (*ptr != '\0')
 	{
-		int index = 0;
-		int found = 0;
+		index = 0;
+		found = 0;
 
-		while (replacements[index] != '\0')
+		while (replacements[index] != '\0' && found == 0)
 		{
 			if (*ptr == replacements[index])
 			{
 				*ptr = leet_chars[index];
 				found = 1;
-				break;
 			}
 			index++;
 		}
-
-		if (ifound)
-		{
-			ptr++;
-		}
+		ptr++;
 	}
-
 	return (str);
 }
 
