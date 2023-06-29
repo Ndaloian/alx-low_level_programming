@@ -1,32 +1,43 @@
 #include "main.h"
+#include <ctype.h>
 
 /**
  * *cap_string - capitalizes all words of a string
- * @str: character string
- * Return: string c
+ * @str: String character
+ * Return: String
  */
 char *cap_string(char *str)
 {
-	int i = 0;
 	int capitalize_next = 1;
+	char nots[] = ",;.!?(){}\n\t\" ";
+	int is_separator = 0;
 
-	while (str[i] != '\0')
+	for (int i = 0; str[i] != '\0'; i++)
 	{
-		if (isspace(str[i]) || str[i] == ',' || str[i] == ';'
-			    || str[i] == '.' || str[i] == '!' || str[i] == '?' ||
-			    str[i] == '"' || str[i] == '(' || str[i] == ')'
-			    || str[i] == '{' || str[i] == '}')
+		if (capitalize_next && islower(str[i]))
+		{
+			str[i] = toupper(str[i]);
+		}
+
+		for (int j = 0; nots[j] != '\0'; j++)
+		{
+			if (str[i] == nots[j])
+			{
+				is_separator = 1;
+				break;
+			}
+		}
+
+		if (is_separator)
 		{
 			capitalize_next = 1;
 		}
-		else if (capitalize_next)
+		else
 		{
-			str[i] = toupper(str[i]);
 			capitalize_next = 0;
 		}
-
-		i++;
 	}
 
 	return (str);
 }
+
