@@ -26,8 +26,11 @@ void times_table(void)
 			{
 				_putchar('0' + (result / 10));
 			}
+<<<<<<< HEAD
+=======
 			_putchar('0' + (result % 10));
 
+>>>>>>> 9d2cc103663e8a2eb8fe0e4ea038b94b458581ee
 			if (j != 9)
 			{
 				_putchar(',');
