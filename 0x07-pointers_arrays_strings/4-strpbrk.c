@@ -11,20 +11,26 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	char *p_accept = accept;
+	int a, b;
+	char *c;
 
-	while (*s != '\0')
+	a = 0;
+
+	while (s[a] != '\0')
 	{
-		while (*p_accept != '\0')
+		b = 0;
+
+		while (accept[b] != '\0')
 		{
-			if (*s == *p_accept)
+			if (s[a] == accept[b])
 			{
+				c = &s[a];
 				return (s);
 			}
 
-			p_accept++;
+			b++;
 		}
-		s++;
+		a++;
 	}
 
 	return (NULL);
