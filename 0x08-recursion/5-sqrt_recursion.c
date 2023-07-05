@@ -29,8 +29,8 @@ int sqrt_recursive_helper(int n, int i)
 	if (i * i == n)
 		return (i);
 
-		if (i * i > n)
-			return (-1);
+	if (i * i > n)
+		return (-1);
 
-		return (sqrt_recursive_helper(n, i + 1));
+	return (sqrt_recursive_helper(n, i + 1));
 }
