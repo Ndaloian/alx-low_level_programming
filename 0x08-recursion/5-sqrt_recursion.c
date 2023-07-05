@@ -39,10 +39,10 @@ int sqrt_recursive_helper(int n, int start, int end)
 		if (mid * mid == n)
 			return (mid);
 
-		if (mid * mid < n)
-			return (sqrt_recursive_helper(n, mid + 1, end));
+			if (mid * mid > n)
+				return (sqrt_recursive_helper(n, start, mid - 1));
 
-		return (sqrt_recursive_helper(n, start, mid - 1));
+		return (sqrt_recursive_helper(n, mid + 1, end));
 	}
 
 	return (end);
