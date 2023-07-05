@@ -45,5 +45,5 @@ int sqrt_recursive_helper(int n, int start, int end)
 		return (sqrt_recursive_helper(n, mid + 1, end));
 	}
 
-	return (end);
+	return (start - 1);
 }
