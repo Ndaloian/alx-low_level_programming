@@ -20,7 +20,6 @@ int is_digit(char *s)
 			return (0);
 		i++;
 	}
-
 	return (1);
 }
 
@@ -38,12 +37,11 @@ int _strlen(char *s)
 	{
 		i++;
 	}
-
 	return (i);
 }
 
 /**
- * errors - handles error for main
+ * errors - handles errors for main
  */
 void errors(void)
 {
@@ -56,7 +54,7 @@ void errors(void)
  * @argc: number of arguments
  * @argv: array of arguments
  *
- * Return: Always 0 (Success)
+ * Return: always 0 (Success)
  */
 int main(int argc, char *argv[])
 {
@@ -92,7 +90,7 @@ int main(int argc, char *argv[])
 	{
 		if (result[i])
 			a = 1;
-		if (ai)
+		if (a)
 			_putchar(result[i] + '0');
 	}
 	if (!a)
